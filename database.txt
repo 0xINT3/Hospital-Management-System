@@ -18,3 +18,7 @@ Error-
 
 FOR table Patientdiagnosis - 
 create table Patientdiagnosis(diagno INT PRIMARY KEY, DiagDetails varchar2(50), Remarks varchar2(50), Diagdate date, status varchar2(20), pat_id int, FOREIGN KEY (pat_id) REFERENCES patient(pat_id));
+
+
+ for staff table :
+  create table staff_table(staf_id int,name varchar(20),dept varchar(20),gender varchar(20), address varchar(20),cel# int, dr_code int, foreign key (dr_code) references doctor(dr_code));
