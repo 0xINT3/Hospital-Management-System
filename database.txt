@@ -22,3 +22,16 @@ create table Patientdiagnosis(diagno INT PRIMARY KEY, DiagDetails varchar2(50), 
 
  for staff table :
   create table staff_table(staff_id int,name varchar(20),dept varchar(20),gender varchar(20), address varchar(20),cel# int, dr_code int, foreign key (dr_code) references doctor(dr_code));
+  
+  Doctor table :
+   insert into doctor(DR_CODE, NAME,GENDER,ADDRESS,DESIGNATION) values (1001,'Madan','male','Swabi','Depthead');
+
+
+SQL> insert into doctor(DR_CODE, NAME,GENDER,ADDRESS,DESIGNATION) values (1002,'Ajmal','male','Gurgaon','head');
+
+
+SQL> insert into doctor(DR_CODE, NAME,GENDER,ADDRESS,DESIGNATION) values (1003,'Abhinav','male','Ambala','head');
+
+
+SQL> insert into doctor(DR_CODE, NAME,GENDER,ADDRESS,DESIGNATION) values (1004,'Jatin','male','Acharyapur','surgeon');
+
