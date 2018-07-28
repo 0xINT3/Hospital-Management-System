@@ -45,15 +45,17 @@ Patient-diagnostice table entries:
 SQl>  insert into Patientdiagnosis values(1,'fever','serious','10-AUG-03','admit',NULL);
 
 SQL> insert into Patientdiagnosis values(2,'heart prob','well','14-AUG-03','Noadmit',NULL);
-
-
-
 SQL> insert into Patientdiagnosis values(3,'Sugar','well','20-AUG-03','Diet',NULL);
-
-
-
 SQL> insert into Patientdiagnosis values(4,'Kidneyfailure','serious','25-AUG-03','Diet',NULL);
-
-
-
 SQL> insert into Patientdiagnosis values(5,'heartattack','bad','30-AUG-03','Admit',NULL);
+
+
+
+For payment table - 
+ create table payment(pat_id INT, FOREIGN KEY (pat_id) REFERENCES patient(pat_id), amount INT, transcation_id INT, paymode varchar2(10), bill_date DATE);
+                                                    *
+Data:
+SQL> insert into payment values(3002, 3500, 1234, 'Cash', '04-June-2018');
+SQL> insert into payment values(3003, 9000, 1324, 'Card', '20-July-2018');
+SQL> insert into payment values(3006, 1000, 1124, 'Cash', '20-December-2018');
+SQL> insert into payment values(3006, 1000, 1994, 'Card', '13-May-2018');
