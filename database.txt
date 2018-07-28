@@ -21,4 +21,4 @@ create table Patientdiagnosis(diagno INT PRIMARY KEY, DiagDetails varchar2(50), 
 
 
  for staff table :
-  create table staff_table(staf_id int,name varchar(20),dept varchar(20),gender varchar(20), address varchar(20),cel# int, dr_code int, foreign key (dr_code) references doctor(dr_code));
+  create table staff_table(staff_id int,name varchar(20),dept varchar(20),gender varchar(20), address varchar(20),cel# int, dr_code int, foreign key (dr_code) references doctor(dr_code));
