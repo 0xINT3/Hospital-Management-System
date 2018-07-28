@@ -1,2 +1,3 @@
 Command for Doctor table - 
 CREATE TABLE doctor(dr_code INT PRIMARY KEY, name varchar(35), gender varchar2(10), address varchar2(50), designation varchar2(30));
+CREATE TABLE patient(pat_id PRIMARY KEY, Name varchar(35),Gender varchar(10),Address varchar(30),tel integer(10),dr_code varchar(10));
