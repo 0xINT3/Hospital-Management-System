@@ -40,3 +40,20 @@ SQL> insert into staff_table values (2002, 'Gangadhar', 'Lab', 'Male', 'Thanesar
 SQL> insert into staff_table values (2003, 'Modi', 'Physio', 'Female', 'Thane', 9563312334, 1002);
 SQL> insert into staff_table values (2004, 'Rama', 'Heart', 'Female', 'Malad', 9564123342, 1004);
 SQL> insert into staff_table values (2005, 'Keshav Nath', 'Operation', 'Male', 'Cyber City', 9560003342, 1001);
+
+Patient-diagnostice table entries:
+SQl>  insert into Patientdiagnosis values(1,'fever','serious','10-AUG-03','admit',NULL);
+
+SQL> insert into Patientdiagnosis values(2,'heart prob','well','14-AUG-03','Noadmit',NULL);
+
+
+
+SQL> insert into Patientdiagnosis values(3,'Sugar','well','20-AUG-03','Diet',NULL);
+
+
+
+SQL> insert into Patientdiagnosis values(4,'Kidneyfailure','serious','25-AUG-03','Diet',NULL);
+
+
+
+SQL> insert into Patientdiagnosis values(5,'heartattack','bad','30-AUG-03','Admit',NULL);
