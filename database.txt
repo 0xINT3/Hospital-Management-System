@@ -59,3 +59,15 @@ SQL> insert into payment values(3002, 3500, 1234, 'Cash', '04-June-2018');
 SQL> insert into payment values(3003, 9000, 1324, 'Card', '20-July-2018');
 SQL> insert into payment values(3006, 1000, 1124, 'Cash', '20-December-2018');
 SQL> insert into payment values(3006, 1000, 1994, 'Card', '13-May-2018');
+
+
+
+
+For visitors - 
+ create table visitors(name varchar2(30), pat_id INT, FOREIGN KEY (pat_id) REFERENCES patient(pat_id), cell_no NUMBER, visit_from DATE, visit_till DATE, inpatient varchar2(5));
+
+Table created.
+
+SQL> insert into visitors values('Aakash Sharma', 3002, 9876544563, '10-Aug-2018', '13-Aug-2018', 'No');
+SQL> insert into visitors values('Abhishek Yadav', 3005, 9878900093, '30-May-2018', '03-June-2018', 'Yes');
+SQL> insert into visitors values('Abeesh Singh', 3003, 9878111233, '30-July-2018', '23-July-2018', 'Yes');
