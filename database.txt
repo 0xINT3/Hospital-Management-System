@@ -1,2 +1,2 @@
-hello, edit here!!!!
-
+Command for Doctor table - 
+CREATE TABLE doctor(dr_code INT PRIMARY KEY, name varchar(35), gender varchar2(10), address varchar2(50), designation varchar2(30));
