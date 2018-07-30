@@ -72,7 +72,7 @@ while loop:          ## While loop which will keep going until loop = False
         
         #kush changed
         
-        import cx_Oracle
+import cx_Oracle
 conn = cx_Oracle.connect('KUSH/KUSH')
 cur = conn.cursor()
 class Pat_View:
@@ -84,7 +84,8 @@ class Pat_View:
         self.tel=tel
         
     def enter_details(self):
-        query = cur.execute('INSERT INTO patient(PAT_ID,NAME,GENDER,ADDRESS,TEL)VALUES(self.pt_id,self.name,self.gender,self.address);
+        query = cur.execute('INSERT INTO patient(PAT_ID,NAME,GENDER,ADDRESS,TEL)VALUES(self.pt_id,self.name,self.gender,self.address)')
+                            
 def print_menu():       ## Your menu design here
     
     print ('''
@@ -102,7 +103,7 @@ while loop:          ## While loop which will keep going until loop = False
      
     if choice==1:     
         print ("Menu 1 has been selected")
-        ok = input(3006,"Kashish","Male',"Gurgaon")
+        ok = input(3006,"Kashish","Male","Gurgaon")
         nigga = Pat_View(ok)
         nigga.view_details()
         
@@ -123,5 +124,3 @@ while loop:          ## While loop which will keep going until loop = False
         print ("Menu 5 has been selected")
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as not value of loop is set to False
-
-   
