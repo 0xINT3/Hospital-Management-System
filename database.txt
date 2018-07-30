@@ -71,3 +71,16 @@ Table created.
 SQL> insert into visitors values('Aakash Sharma', 3002, 9876544563, '10-Aug-2018', '13-Aug-2018', 'No');
 SQL> insert into visitors values('Abhishek Yadav', 3005, 9878900093, '30-May-2018', '03-June-2018', 'Yes');
 SQL> insert into visitors values('Abeesh Singh', 3003, 9878111233, '30-July-2018', '23-July-2018', 'Yes');
+
+
+Patient diagnosis pat_id
+
+SQL> update Patientdiagnosis set pat_id=3001 where DIAGNO=1;
+
+SQL> update Patientdiagnosis set pat_id=3002 where DIAGNO=2;
+
+SQL> update Patientdiagnosis set pat_id=3003 where DIAGNO=3;
+
+SQL> update Patientdiagnosis set pat_id=3004 where DIAGNO=4;
+
+SQL> update Patientdiagnosis set pat_id=3005 where DIAGNO=5;
