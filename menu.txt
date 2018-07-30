@@ -6,7 +6,7 @@ class Pat_View:
         self.pat_id = pat_id
         
     def view_details(self):
-        query = cur.execute('select * from patient where pat_id = pat_id')
+        query = cur.execute('select * from patient where pat_id = :1',{'1':self.pat_id})
         for i in query:
             print(i)
 def print_menu():       ## Your menu design here
