@@ -1,21 +1,28 @@
+import cx_Oracle
+conn = cx_Oracle.connect('SYSTEM/SYSTEM@XE')
+cur = conn.cursor()
+
 def print_menu():       ## Your menu design here
     
-    print ("1. Patient registration")
-    print ("2. Patient Payment")
-    print ("3. File medical reports")
-    print ("4. Recipt")
-    print ("5. Exit")
+    print ('''
+    	1. Patient registration
+    	2. Patient Payment")
+    	3. Medical reports
+    	4. Receipts
+    	5. Exit''')
 
   
 loop=True      
-  
 while loop:          ## While loop which will keep going until loop = False
     print_menu()    ## Displays menu
-    choice = input("Enter your choice [1-5]: ")
+    choice = int(input("Enter your choice [1-5]: "))
      
     if choice==1:     
         print ("Menu 1 has been selected")
-        ## You can add your code or functions here
+        choice_2 = int(input('''Enter choice:
+        	1. Schedule Appointment
+        	2. Hospital Admission'''))
+        ## Hospital sub-menu
     elif choice==2:
         print ("Menu 2 has been selected")
         ## You can add your code or functions here
@@ -30,4 +37,3 @@ while loop:          ## While loop which will keep going until loop = False
         ## You can add your code or functions here
         loop=False # This will make the while loop to end as not value of loop is set to False
    
-
