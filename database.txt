@@ -26,12 +26,12 @@ Doctor table :
    
    
   Patient Table: 
-SQL> INSERT INTO patient VALUES(3001, 'Rahul Gupta', 'Male', 'Pritam Pura', 9823475643, '1001', 23);
-SQL> INSERT INTO patient VALUES(3002, 'Pooja Ahuja', 'Female', 'Premnagar', 9836541211, '1002', 35);
-SQL> INSERT INTO patient VALUES(3003, 'Love Sharma', 'Male', 'Bidholi', 965541211, '1003', 67);
-SQL> INSERT INTO patient VALUES(3004, 'Keshav Singh', 'Male', 'Model Town', 919872154, '1004', 19);
-SQL> INSERT INTO patient VALUES(3005, 'Simran Kaur', 'Female', 'Nanda Ki Chowki', 9158741154, '1005', 29);
-SQL> INSERT INTO patient VALUES(3006, 'Sunit Kumar', 'Male', 'Selaqui', 9152241154, '1006', 13);
+ INSERT INTO patient VALUES(3001, 'Rahul Gupta', 'Male', 'Pritam Pura', 9823475643, '1001');
+ INSERT INTO patient VALUES(3002, 'Pooja Ahuja', 'Female', 'Premnagar', 9836541211, '1002');
+ INSERT INTO patient VALUES(3003, 'Love Sharma', 'Male', 'Bidholi', 965541211, '1003');
+ INSERT INTO patient VALUES(3004, 'Keshav Singh', 'Male', 'Model Town', 919872154, '1004');
+ INSERT INTO patient VALUES(3005, 'Simran Kaur', 'Female', 'Nanda Ki Chowki', 9158741154, '1005');
+ INSERT INTO patient VALUES(3006, 'Sunit Kumar', 'Male', 'Selaqui', 9152241154, '1006');
 
 
 For staff table:
