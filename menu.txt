@@ -1,126 +1,97 @@
 import cx_Oracle
 conn = cx_Oracle.connect('SYSTEM/SYSTEM@XE')
 cur = conn.cursor()
+
 class Pat_View:
     def __init__(self, pat_id):
         self.pat_id = pat_id
         
     def view_details(self):
+        details = []
+        schema = ['Pat ID:', 'Name:','Gender:', 'Address:', 'Telephone:', 'Dr.Code:', 'Age:']
         query = cur.execute('select * from patient where pat_id = :1',{'1':self.pat_id})
-        for i in query:
-            print(i)
+        for i in query.fetchone():
+            details.append(i)
+        for a,b in zip(schema, details):
+            print(a,b)
+            print('\n\n')
+
+
+class Staff_View:
+    def __init__(self, staff_id):
+        self.staff_id = staff_id
+
+    def view_details(self):
+        details = []
+        schema = ['Staff ID:', 'Name:', 'Dept:', 'Gender:', 'Address:', 'Telephone:', 'Dr.Code:']
+        query = cur.execute('select * from staff_table where staff_id = :1',{'1':self.staff_id})
+        for i in query.fetchone():
+            details.append(i)
+        for a,b in zip(schema, details):
+            print(a,b)
+        print('\n\n')
+        
 def print_menu():       ## Your menu design here
     
     print ('''
     	1. Patient registration
-    	2. Patient Payment")
+    	2. Patient Payment
     	3. Medical reports
-    	4. Receipts
-    	5. Exit''')
+    	4. Bill Receipts
+    	5. Doctor Details
+    	6. Patient Details
+    	7. Staff Details
+    	8. Exit''')
 
   
 loop=True      
 while loop:          ## While loop which will keep going until loop = False
+    print("Welcome to Hospital Management System!")
     print_menu()    ## Displays menu
-    choice = int(input("Enter your choice [1-5]: "))
+    choice = int(input("Enter your choice [1-8]: "))
      
     if choice==1:     
-        print ("Menu 1 has been selected")
-        ok = int(input())
-        nigga = Pat_View(ok)
-        nigga.view_details()
+        print ("----------------------Menu 1 has been selected---------------------")
+        
         choice_2 = int(input('''Enter choice:
         	1. Schedule Appointment
         	2. Hospital Admission'''))
         ## Hospital sub-menu
     elif choice==2:
-        print ("Menu 2 has been selected")
+        print ("----------------------Menu 2 has been selected---------------------")
         ## You can add your code or functions here
     elif choice==3:
-        print ("Menu 3 has been selected")
+        print ("----------------------Menu 3 has been selected---------------------")
         ## You can add your code or functions here
     elif choice==4:
-        print ("Menu 4 has been selected")
+        print ("----------------------Menu 4 has been selected---------------------")
         ## You can add your code or functions here
     elif choice==5:
-        print ("Menu 5 has been selected")
-        ## You can add your code or functions here
-        loop=False # This will make the while loop to end as not value of loop is set to False
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        #kush changed
-        
-import cx_Oracle
-conn = cx_Oracle.connect('KUSH/KUSH')
-cur = conn.cursor()
-class Pat_View:
-    def __init__(self, pat_id,name,gender,address):
-        self.pat_id = pat_id
-        self.name=name
-        self.gender=gender
-        self.address=address
-        self.tel=tel
-        
-    def enter_details(self):
-        query = cur.execute('INSERT INTO patient(PAT_ID,NAME,GENDER,ADDRESS,TEL)VALUES(self.pt_id,self.name,self.gender,self.address)')
-                            
-def print_menu():       ## Your menu design here
-    
-    print ('''
-    	1. Patient registration
-    	2. Patient Payment")
-    	3. Medical reports
-    	4. Receipts
-    	5. Exit''')
+        print ("----------------------Menu 5 has been selected---------------------")
+        #choice = 
+    elif choice==6:
+        print ("----------------------Menu 6 has been selected---------------------")
+       
+        pat_id = int(input("Please Enter Patient ID: "))
+        obj6 = Pat_View(pat_id)
+        obj6.view_details()
 
-  
-loop=True      
-while loop:          ## While loop which will keep going until loop = False
-    print_menu()    ## Displays menu
-    choice = int(input("Enter your choice [1-5]: "))
-     
-    if choice==1:     
-        print ("Menu 1 has been selected")
-        ok = input(3006,"Kashish","Male","Gurgaon")
-        nigga = Pat_View(ok)
-        nigga.view_details()
         
-        choice_2 = int(input('''Enter choice:
-        	1. Schedule Appointment
-        	2. Hospital Admission \n'''))
-        ## Hospital sub-menu
-    elif choice==2:
-        print ("Menu 2 has been selected")
-        ## You can add your code or functions here
-    elif choice==3:
-        print ("Menu 3 has been selected")
-        ## You can add your code or functions here
-    elif choice==4:
-        print ("Menu 4 has been selected")
-        ## You can add your code or functions here
-    elif choice==5:
-        print ("Menu 5 has been selected")
-        ## You can add your code or functions here
+    elif choice==7:
+        print ("----------------------Menu 7 has been selected---------------------")
+        choice = int(input("""Select an option:
+        1. View details
+        2. Add staff member
+        """))
+        if choice == 1:
+            staff_id = int(input("Enter staff ID: "))
+            obj7 = Staff_View(staff_id)
+            obj7.view_details()
+            
+        elif choice ==2:
+                     pass
+                     #add code here
+        else:
+                     print("Invalid Option")
+    else:
         loop=False # This will make the while loop to end as not value of loop is set to False
