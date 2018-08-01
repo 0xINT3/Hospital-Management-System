@@ -84,3 +84,37 @@ SQL> update Patientdiagnosis set pat_id=3003 where DIAGNO=3;
 SQL> update Patientdiagnosis set pat_id=3004 where DIAGNO=4;
 
 SQL> update Patientdiagnosis set pat_id=3005 where DIAGNO=5;
+
+
+BED ALLOTMENT
+
+ create table bed_allot (bed_no int ,pat_id int , foreign key (pat_id) references patient(pat_id));
+ 
+ insert into bed_allot values(1,3001);
+
+
+ insert into bed_allot values(2,3002);
+
+ insert into bed_allot values(3,3003);
+ 
+ insert into bed_allot values(4,3004);
+
+ insert into bed_allot values(5,3005);
+
+ insert into bed_allot values(6,3006);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
