@@ -1,0 +1,15 @@
+import cx_Oracle
+conn=cx_Oracle.conect('KUSH/KUSH')
+cur=conn.cursor()
+
+class entry:
+    def details(self,pat_id,name,gender,address,tel,dr_code):
+        self.pat_id=pat_id
+        self.name=name
+        self.gender=gender
+        self.address=address
+        self.dr_code=dr_code
+        query=cur.execute(INSERT INTO patient VALUES(self.pat_id,self.name,self.gender,self.address,self.tel,self.dr_code))
+                          
+                          
+                          
