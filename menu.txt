@@ -2,36 +2,6 @@ import cx_Oracle
 conn = cx_Oracle.connect('KUSH/KUSH')
 cur = conn.cursor()
 import class_doctor
-
-
-class Pat_View:
-    def __init__(self, pat_id):
-        self.pat_id = pat_id
-        
-    def view_details(self):
-        details = []
-        schema = ['Pat ID:', 'Name:','Gender:', 'Address:', 'Telephone:', 'Dr.Code:', 'Age:']
-        query = cur.execute('select * from patient where pat_id = :1',{'1':self.pat_id})
-        for i in query.fetchone():
-            details.append(i)
-        for a,b in zip(schema, details):
-            print(a,b)
-            print('\n\n')
-
-
-class Staff_View:
-    def __init__(self, staff_id):
-        self.staff_id = staff_id
-
-    def view_details(self):
-        details = []
-        schema = ['Staff ID:', 'Name:', 'Dept:', 'Gender:', 'Address:', 'Telephone:', 'Dr.Code:']
-        query = cur.execute('select * from staff_table where staff_id = :1',{'1':self.staff_id})
-        for i in query.fetchone():
-            details.append(i)
-        for a,b in zip(schema, details):
-            print(a,b)
-        print('\n\n')
         
 def print_menu():       ## Your menu design here
     
