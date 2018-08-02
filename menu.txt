@@ -3,6 +3,7 @@ conn = cx_Oracle.connect('KUSH/KUSH')
 cur = conn.cursor()
 import class_doctor
 
+
 class Pat_View:
     def __init__(self, pat_id):
         self.pat_id = pat_id
