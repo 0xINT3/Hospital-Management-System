@@ -33,7 +33,7 @@ class Staff_View:
         
 def print_menu():       ## Your menu design here
     
-    print ('''
+    print ('''-----------------------------Menu-----------------------------
     	1. Patient registration
     	2. Patient Payment
     	3. Medical reports
