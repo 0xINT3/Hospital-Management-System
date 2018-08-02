@@ -88,3 +88,37 @@ while loop:          ## While loop which will keep going until loop = False
                      print("Invalid Option")
     else:
         loop=False # This will make the while loop to end as not value of loop is set to False
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+For entry module        
+        
+        
+        
+        import cx_Oracle
+conn=cx_Oracle.connect('SYSTEM/SYSTEM')
+cur=conn.cursor()
+
+def enter(pat_id,name,gender,address,tel,dr_code, age):
+    query=cur.execute("INSERT INTO patient VALUES (:1, :2, :3, :4, :5, :6)",{'1': pat_id ,'2': "\'"+ str(name)+ "\'", '3': "\'"+ str(gender)+ "\'" ,'4': "\'"+str(address)+ "\'" , '5': int(tel),'6': "\'"+str(dr_code)+ "\'", '7': int(age)})
+    
+
