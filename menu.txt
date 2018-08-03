@@ -30,7 +30,7 @@ while loop:          ## While loop which will keep going until loop = False
         	1. Schedule Appointment
         	2. New Entry'''))
         if choice_2==2:
-            import entry
+            import check
 
             k=int(input("enter the patientid: "))
             l=input("name: ")
@@ -38,12 +38,16 @@ while loop:          ## While loop which will keep going until loop = False
             n=input("address: ")
             o=int(input("telephone number: "))
             p=int(input("doctor code: "))
-            obj1=entry.entry(k,l,m,n,o,p)
+            obj1=check.entry(k,l,m,n,o,p)
 
             obj1.enter()
         ## Hospital sub-menu
     elif choice==2:
         print ("----------------------Menu 2 has been selected---------------------")
+        import payment
+        k=int(input("Enter the patient id of patient to check payment details: "))
+        obj2=payment.payment(k)
+        obj2.pay_detail()
         ## You can add your code or functions here
     elif choice==3:
         print ("----------------------Menu 3 has been selected---------------------")
@@ -88,37 +92,3 @@ while loop:          ## While loop which will keep going until loop = False
                      print("Invalid Option")
     else:
         loop=False # This will make the while loop to end as not value of loop is set to False
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-For entry module        
-        
-        
-        
-        import cx_Oracle
-conn=cx_Oracle.connect('SYSTEM/SYSTEM')
-cur=conn.cursor()
-
-def enter(pat_id,name,gender,address,tel,dr_code, age):
-    query=cur.execute("INSERT INTO patient VALUES (:1, :2, :3, :4, :5, :6)",{'1': pat_id ,'2': "\'"+ str(name)+ "\'", '3': "\'"+ str(gender)+ "\'" ,'4': "\'"+str(address)+ "\'" , '5': int(tel),'6': "\'"+str(dr_code)+ "\'", '7': int(age)})
-    
-
