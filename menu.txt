@@ -44,9 +44,9 @@ while loop:          ## While loop which will keep going until loop = False
         ## Hospital sub-menu
     elif choice==2:
         print ("----------------------Menu 2 has been selected---------------------")
-        import payment
+        import option2
         k=int(input("Enter the patient id of patient to check payment details: "))
-        obj2=payment.payment(k)
+        obj2=option2.payment(k)
         obj2.pay_detail()
         ## You can add your code or functions here
     elif choice==3:
