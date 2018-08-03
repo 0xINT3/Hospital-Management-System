@@ -50,9 +50,11 @@ while loop:          ## While loop which will keep going until loop = False
         ## You can add your code or functions here
     elif choice==3:
         print ("----------------------Menu 3 has been selected---------------------")
-        choice_2=int(input('''Enter choice:
-                      1. Discharge
-                      2. Hospital Admission '''))
+        import option3
+        pat_id = int(input("Enter patient ID:"))
+        obj3 = option3.Reports(pat_id)
+        obj3.view_reports()
+        
         ## Medical report sub-menu
     elif choice==4:
         print ("----------------------Menu 4 has been selected---------------------")
