@@ -2,7 +2,7 @@ import cx_Oracle
 con=cx_Oracle.connect("KUSH/KUSH")
 cur=con.cursor()
 class payment:
-    def __init__(self,transac_id):
+    def __init__(self,pat_id):
         self.pat_id=pat_id
     def pay_detail(self):
         details=[]
