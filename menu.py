@@ -29,15 +29,16 @@ while loop:          ## While loop which will keep going until loop = False
         	1. Schedule Appointment
         	2. New Entry'''))
         if choice_2==2:
-            import check
+            import opt1opt2
 
             k=int(input("enter the patientid: "))
             l=input("name: ")
             m=input("gender: ")
             n=input("address: ")
             o=int(input("telephone number: "))
-            p=int(input("doctor code: "))
-            obj1=check.entry(k,l,m,n,o,p)
+            p=input("doctor code: ")
+            q = int(input("Enter age"))
+            obj1=opt1opt2.insert(k,l,m,n,o,p,q)
 
             obj1.enter()
         ## Hospital sub-menu
