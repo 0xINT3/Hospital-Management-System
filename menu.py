@@ -28,7 +28,11 @@ while loop:          ## While loop which will keep going until loop = False
         choice_2 = int(input('''Enter choice:
         	1. Schedule Appointment
         	2. New Entry'''))
-        if choice_2==2:
+
+        if choice_2 == 1:
+            pass
+        
+        elif choice_2==2:
             import opt1opt2
 
             k=int(input("enter the patientid: "))
@@ -67,12 +71,26 @@ while loop:          ## While loop which will keep going until loop = False
         ## You can add your code or functions here
     elif choice==5:
         print ("----------------------Menu 5 has been selected---------------------")
-        #choice =
-        import option5
-        dr_code=int(input("Enter the doctor code or id"))
-        ob5=option5.doctor(dr_code)
-        ob5.view_details()
-        
+        choice = int(input('''Select an option:
+        1. View Details
+        2. Add Doctor
+        '''))
+        if choice == 1:
+            import option5
+            dr_code=int(input("Enter the doctor code"))
+            ob5=option5.doctor(dr_code)
+            ob5.view_details()
+
+        if choice == 2:
+            import opt5choice2
+            k = int(input("Doctor Code: "))
+            l = input("Name: ")
+            m = input("Gender: ")
+            n = input("Address: ")
+            p = input("Designation: ")
+
+            obj = opt5choice2.insert(k,l,m,n,p)
+            obj.enter()
     elif choice==6:
         print ("----------------------Menu 6 has been selected---------------------")
 
@@ -95,8 +113,17 @@ while loop:          ## While loop which will keep going until loop = False
             obj7.view_details()
             
         elif choice ==2:
-                     pass
-                     #add code here
+            import opt7choice2
+            k=int(input("enter the Staff ID: "))
+            l=input("Name: ")
+            m=input("Dept: ")
+            n=input("Gender: ")
+            o=input("Address: ")
+            p=int(input("Cell Number: "))
+            q = int(input("Doctor Code"))
+            obj1=opt7choice2.Staff(k,l,m,n,o,p,q)
+            obj1.enter()
+                     
         else:
                      print("Invalid Option")
     else:
