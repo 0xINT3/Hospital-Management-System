@@ -57,6 +57,11 @@ while loop:          ## While loop which will keep going until loop = False
         ## Medical report sub-menu
     elif choice==4:
         print ("----------------------Menu 4 has been selected---------------------")
+        import option4
+        l=int(input("Enter the patient id to generate bill receipt"))
+        obj4=option4.receipt(l)
+        obj4.display()
+
         ## You can add your code or functions here
     elif choice==5:
         print ("----------------------Menu 5 has been selected---------------------")
