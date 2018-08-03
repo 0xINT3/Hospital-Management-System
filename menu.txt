@@ -1,7 +1,7 @@
 import cx_Oracle
-conn = cx_Oracle.connect('KUSH/KUSH')
+conn = cx_Oracle.connect('SYSTEM/SYSTEM')
 cur = conn.cursor()
-import class_doctor
+#import class_doctor
         
 def print_menu():       ## Your menu design here
     
@@ -16,10 +16,9 @@ def print_menu():       ## Your menu design here
     	8. Exit''')
 
 
-  
+print("Welcome to Hospital Management System!") 
 loop=True      
 while loop:          ## While loop which will keep going until loop = False
-    print("Welcome to Hospital Management System!")
     print_menu()    ## Displays menu
     choice = int(input("Enter your choice [1-8]: "))
      
@@ -66,9 +65,9 @@ while loop:          ## While loop which will keep going until loop = False
     elif choice==5:
         print ("----------------------Menu 5 has been selected---------------------")
         #choice =
-        import class_doctor
+        import option5
         dr_code=int(input("Enter the doctor code or id"))
-        ob5=class_doctor.doctor(dr_code)
+        ob5=option5.doctor(dr_code)
         ob5.view_details()
         
     elif choice==6:
@@ -86,8 +85,9 @@ while loop:          ## While loop which will keep going until loop = False
         2. Add staff member
         """))
         if choice == 1:
+            import option7
             staff_id = int(input("Enter staff ID: "))
-            obj7 = Staff_View(staff_id)
+            obj7 = option7.Staff_View(staff_id)
             obj7.view_details()
             
         elif choice ==2:
