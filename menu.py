@@ -72,9 +72,10 @@ while loop:          ## While loop which will keep going until loop = False
         
     elif choice==6:
         print ("----------------------Menu 6 has been selected---------------------")
-       
+
+        import option6
         pat_id = int(input("Please Enter Patient ID: "))
-        obj6 = Pat_View(pat_id)
+        obj6 = option6.Pat_View(pat_id)
         obj6.view_details()
 
         
