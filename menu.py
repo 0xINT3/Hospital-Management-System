@@ -43,7 +43,21 @@ while loop: ## While loop which will keep going until loop = False
 
 
         if choice_2 == 1:
-            pass
+            import opt1choice1
+            k=input("Enter the pat_id: ")
+            choice=int(input('''Availability:
+                              1.Heart Specialist
+                              2.Eye Specialist
+                              3.Skin Specilaist
+                              4.Basic Checkup
+                                         '''))
+            if (choice==1): l="Heart Specialist"
+            elif(choice==2): l="Eye Specialist"
+            elif(choice==3): l="Skin Specialist"
+            else: l="Basic Checkup"
+            
+            obj1_1=opt1choice1.appointment(k,l)
+            obj1_1.schedule()
         
         elif choice_2==2:
             import opt1opt2
@@ -317,4 +331,3 @@ while loop: ## While loop which will keep going until loop = False
                      print("Invalid Option")
     else:
         print("Wrong input.....Enter the integer between[1-8]")
-
