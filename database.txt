@@ -114,6 +114,10 @@ update patient set age = 13 where pat_id = 3006;
 
 
 
+5 August 2018(changes)
+
+alter table doctor rename column DESIGNATION to SPECIALIZATION;
+
 
 
 
