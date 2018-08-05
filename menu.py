@@ -1,11 +1,12 @@
 import cx_Oracle
-conn = cx_Oracle.connect('KUSH/KUSH')
-cur = conn.cursor()
-#import class_doctor
+from time import ctime
+conn = cx_Oracle.connect('SYSTEM/SYSTEM')       # Connecting to the database
+cur = conn.cursor()                             # Setting cursor at the starting of connection
         
-def print_menu():       ## Your menu design here
-    
-    print ('''-----------------------------Menu-----------------------------
+def print_menu():       # Menu at the opening of the system 
+
+    print("-----------------------------Menu-----------------------------".center(150))
+    print ('''
     	1. Patient registration
     	2. Patient Payment
     	3. Medical reports
@@ -14,320 +15,173 @@ def print_menu():       ## Your menu design here
     	6. Patient Details
     	7. Staff Details
     	8. Exit''')
-print("Welcome to Hospital Management System!") 
-loop=True
-while loop: ## While loop which will keep going until loop = False
-    print_menu()    ## Displays menu
-    while True:
-            try:
-                choice = int(input("Enter your choice [1-8]: "))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-    if choice==1:     
-        print ("----------------------Menu 1 has been selected---------------------")
-        
-
-        while True:
-            try:
-                choice_2 = int(input('''Enter choice:
-                1. Schedule Appointment
-                2. New Entry'''))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-
-
-        if choice_2 == 1:
-            import opt1choice1
-            k=input("Enter the pat_id: ")
-            choice=int(input('''Availability:
-                              1.Heart Specialist
-                              2.Eye Specialist
-                              3.Skin Specilaist
-                              4.Basic Checkup
-                                         '''))
-            if (choice==1): l="Heart Specialist"
-            elif(choice==2): l="Eye Specialist"
-            elif(choice==3): l="Skin Specialist"
-            else: l="Basic Checkup"
-            
-            obj1_1=opt1choice1.appointment(k,l)
-            obj1_1.schedule()
-        
-        elif choice_2==2:
-            import opt1opt2
-
-            k=int(input("enter the patientid: "))
-            l=input("name: ")
-            m=input("gender: ")
-            n=input("address: ")
-            o=int(input("telephone number: "))
-            p=input("doctor code: ")
-            q = int(input("Enter age"))
-            obj1=opt1opt2.insert(k,l,m,n,o,p,q)
-
-            obj1.enter()
-        ## Hospital sub-menu
-    elif choice==2:
-        print ("----------------------Menu 2 has been selected---------------------")
-        import option2
-        k=int(input("Enter the patient id of patient to check payment details: "))
-        obj2=option2.payment(k)
-        obj2.pay_detail()
-        ## You can add your code or functions here
-    elif choice==3:
-        print ("----------------------Menu 3 has been selected---------------------")
-        import option3
-        pat_id = int(input("Enter patient ID:"))
-        obj3 = option3.Reports(pat_id)
-        obj3.view_reports()
-        
-        ## Medical report sub-menu
-    elif choice==4:
-        print ("----------------------Menu 4 has been selected---------------------")
-        import option4
-        l=int(input("Enter the patient id to generate bill receipt"))
-        obj4=option4.receipt(l)
-        obj4.display()
-
-        ## You can add your code or functions here
-    elif choice==5:
-        print ("----------------------Menu 5 has been selected---------------------")
-       
-        while True:
-            try:
-                choice = int(input('''Select an option:
-        1.View Details
-        2. Add Doctor
-           '''))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-        if choice == 1:
-            import option5
-            dr_code=int(input("Enter the doctor code"))
-            ob5=option5.doctor(dr_code)
-            ob5.view_details()
-
-        if choice == 2:
-            import opt5choice2
-            k = int(input("Doctor Code: "))
-            l = input("Name: ")
-            m = input("Gender: ")
-            n = input("Address: ")
-            p = input("Designation: ")
-
-            obj = opt5choice2.insert(k,l,m,n,p)
-            obj.enter()
-    elif choice==6:
-        print ("----------------------Menu 6 has been selected---------------------")
-
-        import option6
-        pat_id = int(input("Please Enter Patient ID: "))
-        obj6 = option6.Pat_View(pat_id)
-        obj6.view_details()
-
-        
-    elif choice==7:
-        print ("----------------------Menu 7 has been selected---------------------")
-
-        while True:
-            try:
-                choice = int(input('''Select an option:
-        1. View details
-        2. Add staff member
-                   '''))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-        if choice == 1:
-            import option7
-            staff_id = int(input("Enter staff ID: "))
-            obj7 = option7.Staff_View(staff_id)
-            obj7.view_details()
-            
-        elif choice ==2:
-            import opt7choice2
-            k=int(input("enter the Staff ID: "))
-            l=input("Name: ")
-            m=input("Dept: ")
-            n=input("Gender: ")
-            o=input("Address: ")
-            p=int(input("Cell Number: "))
-            q = int(input("Doctor Code"))
-            obj1=opt7choice2.Staff(k,l,m,n,o,p,q)
-            obj1.enter()
-                     
-        else:
-                     print("Invalid Option")
-    else:
-        print("Wrong input.....Enter the integer between[1-8]")
-
-import cx_Oracle
-conn = cx_Oracle.connect('KUSH/KUSH')
-cur = conn.cursor()
-#import class_doctor
-        
-def print_menu():       ## Your menu design here
     
-    print ('''-----------------------------Menu-----------------------------
-    	1. Patient registration
-    	2. Patient Payment
-    	3. Medical reports
-    	4. Bill Receipts
-    	5. Doctor Details
-    	6. Patient Details
-    	7. Staff Details
-    	8. Exit''')
-print("Welcome to Hospital Management System!") 
-loop=True
-while loop: ## While loop which will keep going until loop = False
-    print_menu()    ## Displays menu
-    while True:
-            try:
-                choice = int(input("Enter your choice [1-8]: "))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-    if choice==1:     
-        print ("----------------------Menu 1 has been selected---------------------")
-        
+print("Welcome to Hospital Management System!".center(150))
+print(ctime().center(150))
+print('\n')
+print("Please enter login details!".center(150))
+username = input("Enter Username: ")
+password = input("Enter Password: ")
 
+if  username == 'admin' or username == 'Admin' and password == 'admin' or password == 'Admin':
+        
+    loop = True
+    while loop: # Will run until loop = True
+        print_menu()    # Calling the menu function
         while True:
-            try:
-                choice_2 = int(input('''Enter choice:
-                1. Schedule Appointment
-                2. New Entry'''))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
+                try:
+                    choice = int(input("Enter your choice [1-8]: "))
+                except:
+                    print("Please enter the integer value")
+                    continue
+                else:
+                    break
+        if choice==1:     
+            print ("----------------------Menu 1 has been selected---------------------".center(150))
+            while True:
+                try:
+                    choice_2 = int(input('''Enter choice:
+                    1. Schedule Appointment
+                    2. New Entry
+                    Choice: '''))
+                except:
+                    print("Please enter an integer value")
+                    continue
+                else:
+                    break
 
 
-        if choice_2 == 1:
-            pass
-        
-        elif choice_2==2:
-            import opt1opt2
-
-            k=int(input("enter the patientid: "))
-            l=input("name: ")
-            m=input("gender: ")
-            n=input("address: ")
-            o=int(input("telephone number: "))
-            p=input("doctor code: ")
-            q = int(input("Enter age"))
-            obj1=opt1opt2.insert(k,l,m,n,o,p,q)
-
-            obj1.enter()
-        ## Hospital sub-menu
-    elif choice==2:
-        print ("----------------------Menu 2 has been selected---------------------")
-        import option2
-        k=int(input("Enter the patient id of patient to check payment details: "))
-        obj2=option2.payment(k)
-        obj2.pay_detail()
-        ## You can add your code or functions here
-    elif choice==3:
-        print ("----------------------Menu 3 has been selected---------------------")
-        import option3
-        pat_id = int(input("Enter patient ID:"))
-        obj3 = option3.Reports(pat_id)
-        obj3.view_reports()
-        
-        ## Medical report sub-menu
-    elif choice==4:
-        print ("----------------------Menu 4 has been selected---------------------")
-        import option4
-        l=int(input("Enter the patient id to generate bill receipt"))
-        obj4=option4.receipt(l)
-        obj4.display()
-
-        ## You can add your code or functions here
-    elif choice==5:
-        print ("----------------------Menu 5 has been selected---------------------")
-       
-        while True:
-            try:
-                choice = int(input('''Select an option:
-        1.View Details
-        2. Add Doctor
-           '''))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-        if choice == 1:
-            import option5
-            dr_code=int(input("Enter the doctor code"))
-            ob5=option5.doctor(dr_code)
-            ob5.view_details()
-
-        if choice == 2:
-            import opt5choice2
-            k = int(input("Doctor Code: "))
-            l = input("Name: ")
-            m = input("Gender: ")
-            n = input("Address: ")
-            p = input("Designation: ")
-
-            obj = opt5choice2.insert(k,l,m,n,p)
-            obj.enter()
-    elif choice==6:
-        print ("----------------------Menu 6 has been selected---------------------")
-
-        import option6
-        pat_id = int(input("Please Enter Patient ID: "))
-        obj6 = option6.Pat_View(pat_id)
-        obj6.view_details()
-
-        
-    elif choice==7:
-        print ("----------------------Menu 7 has been selected---------------------")
-
-        while True:
-            try:
-                choice = int(input('''Select an option:
-        1. View details
-        2. Add staff member
-                   '''))
-            except:
-                print("Please enter the integer value")
-                continue
-            else:
-                break
-        if choice == 1:
-            import option7
-            staff_id = int(input("Enter staff ID: "))
-            obj7 = option7.Staff_View(staff_id)
-            obj7.view_details()
+            if choice_2 == 1:
+                import opt1choice1
+                k=input("Enter the pat_id: ")
+                choice=int(input('''Availability:
+                                  1.Heart Specialist
+                                  2.Eye Specialist
+                                  3.Skin Specilaist
+                                  4.Basic Checkup
+                                  Choice: '''))
+                if choice == 1:
+                    l = "Heart Specialist"
+                elif choice == 2:
+                    l = "Eye Specialist"
+                elif choice == 3:
+                    l = "Skin Specialist"
+                else:
+                    l = "Basic Checkup"
+                
+                obj1_1=opt1choice1.appointment(k,l)
+                obj1_1.schedule()
             
-        elif choice ==2:
-            import opt7choice2
-            k=int(input("enter the Staff ID: "))
-            l=input("Name: ")
-            m=input("Dept: ")
-            n=input("Gender: ")
-            o=input("Address: ")
-            p=int(input("Cell Number: "))
-            q = int(input("Doctor Code"))
-            obj1=opt7choice2.Staff(k,l,m,n,o,p,q)
-            obj1.enter()
-                     
+            elif choice_2 == 2:
+                import opt1opt2
+
+                k = int(input("Enter the Patient ID: "))
+                l = input("Name: ")
+                m = input("Gender: ")
+                n = input("Address: ")
+                o = int(input("Telephone Number: "))
+                p = input("Doctor code: ")
+                q = int(input("Age"))
+                obj1 = opt1opt2.insert(k,l,m,n,o,p,q)
+                obj1.enter()
+                
+            
+        elif choice == 2:
+            
+            print ("----------------------Menu 2 has been selected---------------------".center(150))
+            import option2
+            k = int(input("Enter the Patient ID of patient to check payment details: "))
+            obj2=option2.payment(k)
+            obj2.pay_detail()
+            
+        elif choice == 3:
+            print ("----------------------Menu 3 has been selected---------------------".center(150))
+            import option3
+            pat_id = int(input("Enter patient ID:"))
+            obj3 = option3.Reports(pat_id)
+            obj3.view_reports()
+            
+        elif choice == 4:
+            print ("----------------------Menu 4 has been selected---------------------".center(150))
+            import option4
+            l=int(input("Enter the patient id to generate bill receipt"))
+            obj4=option4.receipt(l)
+            obj4.display()
+
+        elif choice==5:
+            print ("----------------------Menu 5 has been selected---------------------".center(150))
+           
+            while True:
+                try:
+                    choice = int(input('''Select an option:
+            1.View Details
+            2. Add Doctor
+            Choice: '''))
+                except:
+                    print("Please enter the integer value")
+                    continue
+                else:
+                    break
+            if choice == 1:
+                import option5
+                dr_code=int(input("Enter the doctor code"))
+                ob5=option5.doctor(dr_code)
+                ob5.view_details()
+
+            if choice == 2:
+                import opt5choice2
+                k = int(input("Doctor Code: "))
+                l = input("Name: ")
+                m = input("Gender: ")
+                n = input("Address: ")
+                p = input("Designation: ")
+
+                obj = opt5choice2.insert(k,l,m,n,p)
+                obj.enter()
+        elif choice==6:
+            print ("----------------------Menu 6 has been selected---------------------".center(150))
+
+            import option6
+            pat_id = int(input("Please Enter Patient ID: "))
+            obj6 = option6.Pat_View(pat_id)
+            obj6.view_details()
+
+            
+        elif choice==7:
+            print ("----------------------Menu 7 has been selected---------------------".center(150))
+
+            while True:
+                try:
+                    choice = int(input('''Select an option:
+            1. View details
+            2. Add staff member
+            Choice: '''))
+                except:
+                    print("Please enter the integer value")
+                    continue
+                else:
+                    break
+            if choice == 1:
+                import option7
+                staff_id = int(input("Enter staff ID: "))
+                obj7 = option7.Staff_View(staff_id)
+                obj7.view_details()
+                
+            elif choice ==2:
+                import opt7choice2
+                k=int(input("enter the Staff ID: "))
+                l=input("Name: ")
+                m=input("Dept: ")
+                n=input("Gender: ")
+                o=input("Address: ")
+                p=int(input("Cell Number: "))
+                q = int(input("Doctor Code"))
+                obj1=opt7choice2.Staff(k,l,m,n,o,p,q)
+                obj1.enter()
+                         
+            else:
+                         print("Invalid Option")
         else:
-                     print("Invalid Option")
-    else:
-        print("Wrong input.....Enter the integer between[1-8]")
+            print("Wrong input.....Enter the integer between[1-8]".center(150))
+else:
+    print("Enter valid details to login")
