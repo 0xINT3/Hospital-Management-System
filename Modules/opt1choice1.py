@@ -8,7 +8,7 @@ class appointment:
         self.specialization=specialization
     def schedule(self):
         if('select * from doctor where self.specialization'):
-            print("Appointment done for",self.specialization)
+            print("Appointment done for patient with patient id",self.pat_id)
         else:
             print("Unavailability of this type of specialised doctor in this hospital")
 
