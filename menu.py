@@ -1,6 +1,6 @@
 import cx_Oracle
 from time import ctime
-conn = cx_Oracle.connect('SYSTEM/SYSTEM')       # Connecting to the database
+conn = cx_Oracle.connect('KUSH/KUSH')       # Connecting to the database
 cur = conn.cursor()                             # Setting cursor at the starting of connection
         
 def print_menu():       # Menu at the opening of the system 
@@ -184,4 +184,4 @@ if  username == 'admin' or username == 'Admin' and password == 'admin' or passwo
         else:
             print("Wrong input.....Enter the integer between[1-8]".center(150))
 else:
-    print("Enter valid details to login")
+    print("Invalid Login Details....run the program again")
