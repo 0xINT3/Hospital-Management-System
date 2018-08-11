@@ -1,5 +1,5 @@
 import cx_Oracle
-conn=cx_Oracle.connect('SYSTEM/SYSTEM')
+conn=cx_Oracle.connect('KUSH/KUSH')
 cur=conn.cursor()
 
 
@@ -15,3 +15,8 @@ class insert:
     def enter(self):
         query=cur.execute("INSERT INTO patient VALUES (:1, :2, :3, :4, :5, :6, :7)",{'1': int(self.pat_id), '2': str(self.name), '3': str(self.gender) ,'4':str(self.address), '5': int(self.tel),'6': str(self.dr_code), '7': int(self.age)})
         conn.commit()
+    def new_appointment(self,pat_id):
+        k=True
+        if k:
+            print("Appointment done for patient with patient id: ",pat_id)
+        
