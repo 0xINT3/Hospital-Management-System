@@ -15,6 +15,6 @@ class doctor:
         for a,b in zip(schema,details):
             print(a,b)
         print('\n\n')
-    except:
-        print("No such doctor details.")
+       except:
+         print("No such doctor details.")
 
