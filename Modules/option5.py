@@ -16,5 +16,5 @@ class doctor:
             print(a,b)
         print('\n\n')
     except:
-        print("No such patient details.")
+        print("No such doctor details.")
 
