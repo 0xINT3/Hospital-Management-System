@@ -34,8 +34,7 @@ def main():
                     try:
                         choice_2 = int(input('''Enter choice:
                         1. Schedule Appointment
-                        2. New Entry
-                        3. Exit
+                        2. Exit
                         Choice: '''))
                     except:
                         print("Please enter an integer value")
@@ -45,39 +44,61 @@ def main():
 
 
                 if choice_2 == 1:
-                    import opt1choice1
-                    k=input("Enter the pat_id: ")
-                    choice=int(input('''Availability:
-                                      1.Heart Specialist
-                                      2.Eye Specialist
-                                      3.Skin Specilaist
-                                      4.Basic Checkup
-                                      Choice: '''))
-                    if choice == 1:
-                        l = "Heart Specialist"
-                    elif choice == 2:
-                        l = "Eye Specialist"
-                    elif choice == 3:
-                        l = "Skin Specialist"
-                    else:
-                        l = "Basic Checkup"
-                    
-                    obj1_1=opt1choice1.appointment(k,l)
-                    obj1_1.schedule()
-                
-                
-                elif choice_2 == 2:
-                    import opt1opt2
+                    choice_2_1=int(input('''Enter choice:
+                         1. New Patients
+                         2. Old Patients
+                         choice:  '''))
+                    if choice_2_1==1:
+                        import opt1opt2
+                        k = int(input("Enter the Patient ID: "))
+                        l = input("Name: ")
+                        m = input("Gender: ")
+                        n = input("Address: ")
+                        o = int(input("Telephone Number: "))
+                        p = input("Doctor code: ")
+                        q = int(input("Age"))
+                        print("Updated new entry.......")
+                        obj1 = opt1opt2.insert(k,l,m,n,o,p,q)
+                        obj1.enter()
+                        choice=int(input('''Availability:
+                                          1.Heart Specialist
+                                          2.Eye Specialist
+                                          3.Skin Specilaist
+                                          4.Basic Checkup
+                                          Choice: '''))
+                        if choice == 1:
+                            l = "Heart Specialist"
+                        elif choice == 2:
+                            l = "Eye Specialist"
+                        elif choice == 3:
+                            l = "Skin Specialist"
+                        else:
+                            l = "Basic Checkup"
+                        obj1.new_appointment(k)
+                        
 
-                    k = int(input("Enter the Patient ID: "))
-                    l = input("Name: ")
-                    m = input("Gender: ")
-                    n = input("Address: ")
-                    o = int(input("Telephone Number: "))
-                    p = input("Doctor code: ")
-                    q = int(input("Age"))
-                    obj1 = opt1opt2.insert(k,l,m,n,o,p,q)
-                    obj1.enter()
+                        
+                    else:
+                        import opt1choice1
+                        k=input("Enter the pat_id: ")
+                        choice=int(input('''Availability:
+                                          1.Heart Specialist
+                                          2.Eye Specialist
+                                          3.Skin Specilaist
+                                          4.Basic Checkup
+                                          Choice: '''))
+                        if choice == 1:
+                            l = "Heart Specialist"
+                        elif choice == 2:
+                            l = "Eye Specialist"
+                        elif choice == 3:
+                            l = "Skin Specialist"
+                        else:
+                            l = "Basic Checkup"
+                    
+                        obj1_1=opt1choice1.appointment(k,l)
+                        obj1_1.schedule()
+                
                 else:
                     pass # for exiting the sub-menu
                     
