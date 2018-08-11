@@ -8,11 +8,14 @@ class Staff_View:
         self.staff_id = staff_id
 
     def view_details(self):
-        details = []
-        schema = ['Staff ID:', 'Name:', 'Dept:', 'Gender:', 'Address:', 'Telephone:', 'Dr.Code:']
-        query = cur.execute('select * from staff_table where staff_id = :1',{'1':self.staff_id})
-        for i in query.fetchone():
-            details.append(i)
-        for a,b in zip(schema, details):
-            print(a,b)
-        print('\n\n')
+        try:
+	        details = []
+	        schema = ['Staff ID:', 'Name:', 'Dept:', 'Gender:', 'Address:', 'Telephone:', 'Dr.Code:']
+	        query = cur.execute('select * from staff_table where staff_id = :1',{'1':self.staff_id})
+	        for i in query.fetchone():
+	            details.append(i)
+	        for a,b in zip(schema, details):
+	            print(a,b)
+	        print('\n\n')
+	    except:
+	    	print("\nNo such staff details.")
