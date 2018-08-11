@@ -7,11 +7,14 @@ class Pat_View:
         self.pat_id = pat_id
         
     def view_details(self):
-        details = []
-        schema = ['Pat ID:', 'Name:','Gender:', 'Address:', 'Telephone:', 'Dr.Code:', 'Age:']
-        query = cur.execute('select * from patient where pat_id = :1',{'1':self.pat_id})
-        for i in query.fetchone():
-            details.append(i)
-        for a,b in zip(schema, details):
-            print(a,b)
-        print('\n\n')
+        try:
+            details = []
+            schema = ['Pat ID:', 'Name:','Gender:', 'Address:', 'Telephone:', 'Dr.Code:', 'Age:']
+            query = cur.execute('select * from patient where pat_id = :1',{'1':self.pat_id})
+            for i in query.fetchone():
+                details.append(i)
+            for a,b in zip(schema, details):
+                print(a,b)
+            print('\n\n')
+        except:
+            print("No such patient details.")
