@@ -147,6 +147,12 @@ def main():
                     ob5.view_details()
 
                 elif choice == 2:
+                    print('''Applicants should have any one of specialization: 
+                              1. Heart Specialist
+                              2. Skin Specialist
+                              3. Eyes Specialist
+                              4. Basic Checkup
+                                   ''')
                     import opt5choice2
                     k = int(input("Doctor Code: "))
                     l = input("Name: ")
