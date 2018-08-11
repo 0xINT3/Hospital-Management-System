@@ -1,7 +1,7 @@
 import cx_Oracle
 import quotes
 from time import ctime
-conn = cx_Oracle.connect('SYSTEM/SYSTEM')       # Connecting to the database
+conn = cx_Oracle.connect('KUSH/KUSH')       # Connecting to the database
 cur = conn.cursor()                             # Setting cursor at the starting of connection
         
 def print_menu():       # Menu at the opening of the system 
@@ -35,6 +35,7 @@ def main():
                         choice_2 = int(input('''Enter choice:
                         1. Schedule Appointment
                         2. New Entry
+                        3. Exit
                         Choice: '''))
                     except:
                         print("Please enter an integer value")
@@ -64,6 +65,7 @@ def main():
                     obj1_1=opt1choice1.appointment(k,l)
                     obj1_1.schedule()
                 
+                
                 elif choice_2 == 2:
                     import opt1opt2
 
@@ -76,6 +78,8 @@ def main():
                     q = int(input("Age"))
                     obj1 = opt1opt2.insert(k,l,m,n,o,p,q)
                     obj1.enter()
+                else:
+                    pass # for exiting the sub-menu
                     
                 
             elif choice == 2:
@@ -108,6 +112,7 @@ def main():
                         choice = int(input('''Select an option:
                 1.View Details
                 2. Add Doctor
+                3. Exit
                 Choice: '''))
                     except:
                         print("Please enter the integer value")
@@ -120,7 +125,7 @@ def main():
                     ob5=option5.doctor(dr_code)
                     ob5.view_details()
 
-                if choice == 2:
+                elif choice == 2:
                     import opt5choice2
                     k = int(input("Doctor Code: "))
                     l = input("Name: ")
@@ -130,6 +135,9 @@ def main():
 
                     obj = opt5choice2.insert(k,l,m,n,p)
                     obj.enter()
+                else:
+                    pass      #for exiting the submenu
+
             elif choice==6:
                 print ("----------------------Menu 6 has been selected---------------------".center(150))
 
@@ -147,6 +155,7 @@ def main():
                         choice = int(input('''Select an option:
                 1. View details
                 2. Add staff member
+                3. Exit
                 Choice: '''))
                     except:
                         print("Please enter the integer value")
@@ -170,6 +179,8 @@ def main():
                     q = int(input("Doctor Code"))
                     obj1=opt7choice2.Staff(k,l,m,n,o,p,q)
                     obj1.enter()
+                else:
+                    pass # for exiting the sub-menu
                              
             elif choice == 8:
                     return
