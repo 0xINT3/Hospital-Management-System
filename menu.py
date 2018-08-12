@@ -107,8 +107,12 @@ def main():
                 
                 print ("----------------------Menu 2 has been selected---------------------".center(150))
                 import option2
-                k = int(input("Enter the Patient ID of patient to check payment details: "))
-                obj2=option2.payment(k)
+                a = int(input("Enter the Patient ID of patient to make payment: "))
+                b = int(input("Enter amount: "))
+                d = int(input("Enter transaction id: "))
+                c = input("Enter paymode: ")
+                e = input("Enter date: ") 
+                obj2=option2.payment(a,b,d,c,e)
                 obj2.pay_detail()
                 
             elif choice == 3:
