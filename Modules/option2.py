@@ -1,15 +1,17 @@
 import cx_Oracle
-con=cx_Oracle.connect("KUSH/KUSH")
+from datetime import datetime
+con=cx_Oracle.connect("SYSTEM/SYSTEM")
 cur=con.cursor()
 class payment:
-    def __init__(self,pat_id):
+    def __init__(self,pat_id, amount, transaction, paymode, date):
         self.pat_id=pat_id
+        self.amount = amount
+        self.paymode = paymode
+        self.transaction = transaction
+        self.date = date
+        
     def pay_detail(self):
-        details=[]
-        schema=['Pat_Id: ','Amount: ','Transaction_Id: ','PayMode: ','Bill_Date: ']
-        query=cur.execute('select * from payment where pat_id=:1',{'1':self.pat_id})
-        for i in query.fetchone():
-            details.append(i)
-        for a,b in zip(schema,details):
-            print(a,b)
-            print('\n\n')
+        #date = datetime.now().strftime("%d-%m-%Y")
+        query=cur.execute('insert into payment values(:1, :2, :3, :4, :5)',{'1': self.pat_id, '2': self.amount, '3': self.transaction, '4': self.paymode, '5': self.date})
+        con.commit()
+        con.close()
