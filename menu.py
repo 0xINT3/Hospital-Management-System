@@ -60,6 +60,8 @@ def main():
                         print("Updated new entry.......")
                         obj1 = opt1opt2.insert(k,l,m,n,o,p,q)
                         obj1.enter()
+                        s=int(input("enter the bed number to be alloted"))
+                        obj1.bed_allot(s)
                         choice=int(input('''Availability:
                                           1.Heart Specialist
                                           2.Eye Specialist
